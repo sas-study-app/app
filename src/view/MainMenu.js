@@ -6,17 +6,16 @@ export default class MainMenu extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.schedule}>
-                    <Text>Study Schedule</Text>
-                    <Text>Right now, it is {new Date().toString()}</Text>
+                    <Text style={styles.title}>Study Schedule</Text>
                 </View>
                 <View style={styles.prestudy}>
-                    <Text>Pre-Study</Text>
+                    <Text style={styles.title}>Pre-Study</Text>
                 </View>
                 <View style={styles.instudy}>
-                    <Text>In Study</Text>
+                    <Text style={styles.title}>In Study</Text>
                 </View>
                 <View style={styles.rnr}>
-                    <Text>Rest & Relaxation</Text>
+                    <Text style={styles.title}>Rest & Relaxation</Text>
                 </View>
             </View>
         )
@@ -31,16 +30,24 @@ const te = {
         borderStyle: 'solid',
         padding: '3px',
         margin: '3px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        flexBasis: 'center',
+        justifyContent: 'space-around',
     },
 }
 
 const styles = StyleSheet.create({
     container: {
         display: 'grid',
-        height: '100%',
-        width: '100%',
         justifyItems: 'center',
+        width: '100%',
         alignItems: 'stretch',
+        gridTemplateRows: '50% 50%',
+        gridTemplateColumns: '50% 50%',
+        margin: 'auto',
+        flexGrow: 1,
     },
     schedule: {
         ...te.items,
@@ -57,5 +64,8 @@ const styles = StyleSheet.create({
     rnr: {
         ...te.items,
         gridColumn: '2 / 3',
+    },
+    title: {
+        fontSize: '20px',
     },
 })

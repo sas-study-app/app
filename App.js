@@ -6,7 +6,7 @@ import TopBar from "./src/components/TopBar";
 
 export default function App() {
   return (
-      <View>
+      <View style={styles.main}>
         <TopBar></TopBar>
         <MainMenu></MainMenu>
       </View>
@@ -16,5 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
     main: {
         display: 'flex',
-    }
+        flexDirection: 'column',
+        height: '100%',
+    },
 })

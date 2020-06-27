@@ -22,7 +22,9 @@ export default class TopBar extends React.PureComponent {
     render() {
         return (
             <View style={styles.main}>
-                <Text>{this.username}</Text>
+                <View style={styles.username}>
+                    <Text>{this.username}</Text>
+                </View>
             </View>
         )
     }
@@ -33,7 +35,12 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row-reverse',
         height: '30px',
-    }
+        alignItems: 'center',
+    },
+    username: {
+        paddingLeft: '10px',
+        paddingRight: '10px',
+    },
 })
 
 
