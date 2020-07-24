@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageBackground, Text, View, StyleSheet, Button} from 'react-native';
 
 const pres = () => {
-    
+
 }
 
 
@@ -10,22 +10,22 @@ export default class MainMenu extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <ImageBackground source = {require('./studysch.png')} style={styles.schedule} resizeMode = 'contain'>
-                
-                    <Text style={styles.title}> </Text>
-                    
-                </ImageBackground>
-                <ImageBackground source = {require('./prestudy.png')} style={styles.prestudy} resizeMode = 'contain'>
-                    <Text style={styles.title}> </Text>
-                </ImageBackground>
-                <ImageBackground source = {require('./instudy.png')} style={styles.instudy} resizeMode = 'contain'>
-                    <Text style={styles.title}> </Text>
-                </ImageBackground>
-                
-                <ImageBackground source = {require('./randr.png')} style={styles.rnr}  resizeMode = 'contain'>
-                
-                    <Text style={styles.title}> </Text>
-                </ImageBackground>
+                <View style={styles.column}>
+                    <ImageBackground source = {require('./studysch.png')} style={styles.schedule} resizeMode = 'contain'>
+                        <Text style={styles.title}> </Text>
+                    </ImageBackground>
+                    <ImageBackground source = {require('./prestudy.png')} style={styles.prestudy} resizeMode = 'contain'>
+                        <Text style={styles.title}> </Text>
+                    </ImageBackground>
+                </View>
+                <View style={styles.column}>
+                    <ImageBackground source = {require('./instudy.png')} style={styles.instudy} resizeMode = 'contain'>
+                        <Text style={styles.title}> </Text>
+                    </ImageBackground>
+                    <ImageBackground source = {require('./randr.png')} style={styles.rnr}  resizeMode = 'contain'>
+                        <Text style={styles.title}> </Text>
+                    </ImageBackground>
+                </View>
             </View>
         )
     }
@@ -41,7 +41,8 @@ const te = {
         margin: '3px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'stretch',
+        height: '40%',
         flexBasis: 'center',
         justifyContent: 'space-around',
     }
@@ -51,38 +52,36 @@ const te = {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'grid',
-        justifyItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
         width: '100%',
+        height: '100%',
         alignItems: 'stretch',
-        gridTemplateRows: '50% 50%',
-        gridTemplateColumns: '50% 50%',
-        margin: 'auto',
+        alignContent: 'stretch',
+        justifyContent: 'space-evenly',
+        margin: '0',
         flexGrow: 1,
-       
     },
-    schedule: {
-        ...te.items,
-        gridColumn: '1 / 2',
+    column: {
+        display: 'flex',
+        margin: '0',
+        justifyContent: 'space-evenly',
+        width: '45%',
+        height: '100%',
+        alignItems: 'stretch',
+        alignContent: 'stretch',
+        flexDirection: 'column',
     },
-    prestudy: {
-        ...te.items,
-        gridColumn: '1 / 2',
-    },
-    instudy: {
-        ...te.items,
-        gridColumn: '2 / 3',
-    },
-    rnr: {
-        ...te.items,
-        gridColumn: '2 / 3',
-    },
+    schedule: te.items,
+    prestudy: te.items,
+    instudy: te.items,
+    rnr: te.items,
     title: {
         fontSize: '20px',
     },
 
-   
 
-    
-    
+
+
+
 })
