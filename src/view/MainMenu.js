@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageBackground, Text, View, StyleSheet, Button} from 'react-native';
+import { Link } from "react-router-native";
 
 const pres = () => {
 
@@ -22,9 +23,11 @@ export default class MainMenu extends React.Component {
                     <ImageBackground source = {require('./instudy.png')} style={styles.instudy} resizeMode = 'contain'>
                         <Text style={styles.title}> </Text>
                     </ImageBackground>
+                    <Link to="/rnr" style={styles.links}>
                     <ImageBackground source = {require('./randr.png')} style={styles.rnr}  resizeMode = 'contain'>
                         <Text style={styles.title}> </Text>
                     </ImageBackground>
+                    </Link>
                 </View>
             </View>
         )
@@ -75,13 +78,12 @@ const styles = StyleSheet.create({
     schedule: te.items,
     prestudy: te.items,
     instudy: te.items,
-    rnr: te.items,
+    rnr: {
+        height: '100%',
+        width: '100%',
+    },
     title: {
         fontSize: '20px',
     },
-
-
-
-
-
+    links: te.items,
 })

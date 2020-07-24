@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, Dimensions, Image } from 'react-native';
+import { View, StyleSheet, Dimensions, Image, Button } from 'react-native';
 import Text from "react-native-web/src/exports/Text";
+import {Link} from 'react-router-native';
 
 const height = 150;
 
@@ -27,14 +28,11 @@ export default class TopBar extends React.PureComponent {
     render() {
         return (
             <View style={styles.main}>
-                
-                
                 <View style={styles.username}>
                     <Text>{this.username}</Text>
-                    <Image source={require('./Images/icon.png')} style = {styles.icon}></Image>
+                    <Image source={require('./Images/icon.png')} style = {styles.icon} />
                 </View>
-                
-                
+                <Link to="/"><Text>Go Home</Text></Link>
             </View>
         )
     }
@@ -51,10 +49,10 @@ const styles = StyleSheet.create({
         paddingLeft: '10px',
         paddingRight: '10px',
         flexDirection: 'row-reverse',
-        
+
     },
 
-    
+
 
     icon: {
         display: 'flex',

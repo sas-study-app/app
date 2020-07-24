@@ -7,6 +7,7 @@ import TopBar from "./src/components/TopBar";
 import RnR from "./src/view/RnR";
 import { createStackNavigator } from 'react-navigation-stack';
 import {createAppNavigator, createAppContainer, StackActions} from 'react-navigation';
+import {NativeRouter, Route, Redirect, BackButton} from "react-router-native";
 
 /*const screens = {
   MainMenu: {
@@ -22,13 +23,15 @@ const HomeStack = createStackNavigator(screens);*/
 
 export default function App() {
   return (
-      <View style={styles.main}>
-        <TopBar></TopBar>
-       <MainMenu></MainMenu>
-        
-      
-       
-      </View>
+      <NativeRouter>
+          <BackButton />
+          <View style={styles.main}>
+              <TopBar/>
+              <Route exact path="/" component={MainMenu}/>
+              <Route path="/rnr" component={RnR}/>
+          </View>
+      </NativeRouter>
+
   );
 }
 //<MainMenu></MainMenu>

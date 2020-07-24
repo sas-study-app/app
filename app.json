@@ -12,6 +12,13 @@
     ],
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "web": {
+      "build": {
+        "babel": {
+          "include": ["react-router-native"]
+        }
+      }
   }
+}
 }
