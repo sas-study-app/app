@@ -1,11 +1,16 @@
 import React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions, Image } from 'react-native';
 import Text from "react-native-web/src/exports/Text";
 
 const height = 150;
 
 export default class TopBar extends React.PureComponent {
     username = this.props.username || 'Test User';
+    //icon = document.createElement('icon');
+    //icon.s = 'icon.png';<Image
+      /*  style={styles.icon}
+        source={{ uri:
+            'icon.png', }}/>*/
 
     state = {
         width: Dimensions.get('window').width,
@@ -22,9 +27,14 @@ export default class TopBar extends React.PureComponent {
     render() {
         return (
             <View style={styles.main}>
+                
+                
                 <View style={styles.username}>
                     <Text>{this.username}</Text>
+                    <Image source={require('./Images/icon.png')} style = {styles.icon}></Image>
                 </View>
+                
+                
             </View>
         )
     }
@@ -40,6 +50,19 @@ const styles = StyleSheet.create({
     username: {
         paddingLeft: '10px',
         paddingRight: '10px',
+        flexDirection: 'row-reverse',
+        
+    },
+
+    
+
+    icon: {
+        display: 'flex',
+        flexDirection: 'row',
+        height: '20px',
+        width: '20px',
+        alignItems: 'center',
+        marginHorizontal: 5,
     },
 })
 

@@ -1,22 +1,31 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { ImageBackground, Text, View, StyleSheet, Button} from 'react-native';
+
+const pres = () => {
+    
+}
+
 
 export default class MainMenu extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.schedule}>
-                    <Text style={styles.title}>Study Schedule</Text>
-                </View>
-                <View style={styles.prestudy}>
-                    <Text style={styles.title}>Pre-Study</Text>
-                </View>
-                <View style={styles.instudy}>
-                    <Text style={styles.title}>In Study</Text>
-                </View>
-                <View style={styles.rnr}>
-                    <Text style={styles.title}>Rest & Relaxation</Text>
-                </View>
+                <ImageBackground source = {require('./studysch.png')} style={styles.schedule} resizeMode = 'contain'>
+                
+                    <Text style={styles.title}> </Text>
+                    
+                </ImageBackground>
+                <ImageBackground source = {require('./prestudy.png')} style={styles.prestudy} resizeMode = 'contain'>
+                    <Text style={styles.title}> </Text>
+                </ImageBackground>
+                <ImageBackground source = {require('./instudy.png')} style={styles.instudy} resizeMode = 'contain'>
+                    <Text style={styles.title}> </Text>
+                </ImageBackground>
+                
+                <ImageBackground source = {require('./randr.png')} style={styles.rnr}  resizeMode = 'contain'>
+                
+                    <Text style={styles.title}> </Text>
+                </ImageBackground>
             </View>
         )
     }
@@ -35,8 +44,10 @@ const te = {
         alignItems: 'center',
         flexBasis: 'center',
         justifyContent: 'space-around',
-    },
+    }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -48,6 +59,7 @@ const styles = StyleSheet.create({
         gridTemplateColumns: '50% 50%',
         margin: 'auto',
         flexGrow: 1,
+       
     },
     schedule: {
         ...te.items,
@@ -68,4 +80,9 @@ const styles = StyleSheet.create({
     title: {
         fontSize: '20px',
     },
+
+   
+
+    
+    
 })
